@@ -29,9 +29,13 @@ class BaseOrderCost(models.Model):
     base_order_id = fields.Many2one("base.order")
     base_order_tour_id = fields.Many2one("base.order.tour")
 
-    @api.depends("base_order_tour_id", "base_order_tour_id.distance")
+    @api.depends(
+        "base_order_id.base_order_tour_ids",
+        "base_order_tour_id",
+        "base_order_tour_id.distance",
+    )
     def _get_price(self):
-        _logger.info("_get_price results for %s", self)
+        print("shalalalalal")
         for rec in self:
             rec.price = rec.base_order_tour_id.distance * 10
             _logger.info("_get_price results in %s", rec.price)
