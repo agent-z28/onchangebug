@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_base_order_tour,access_base_order_tour,model_base_order_tour,base.group_user,1,1,1,1
+access_base_order_cost,access_base_order_cost,model_base_order_cost,base.group_user,1,1,1,1
+access_base_order,access_base_order,model_base_order,base.group_user,1,1,1,1
